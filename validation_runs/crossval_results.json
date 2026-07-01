@@ -1,0 +1,321 @@
+{
+  "best_cycle": "cycle_3_relation_refined",
+  "best_selection_score": 21.568267822265625,
+  "cycles": [
+    {
+      "name": "cycle_1_light_baseline",
+      "selection_score": 20.191299319267273,
+      "model_config": {
+        "num_classes": 4,
+        "text_dim": 128,
+        "visual_dim": 16,
+        "layout_dim": 10,
+        "hidden_dim": 48,
+        "role_dim": 32,
+        "num_relation_types": 3,
+        "num_gnn_layers": 2,
+        "dropout": 0.1,
+        "max_nodes": 48,
+        "top_k": 6,
+        "edge_threshold": 0.55,
+        "relation_risk_alpha": 1.0,
+        "risk_relation_positive_weight": 3.0,
+        "role_vocab": [
+          "amount",
+          "total",
+          "tax",
+          "item",
+          "payer",
+          "payee",
+          "date",
+          "seal",
+          "qr",
+          "bill_no",
+          "account",
+          "other"
+        ],
+        "relation_vocab": [
+          "spatial",
+          "semantic",
+          "business"
+        ]
+      },
+      "train_config": {
+        "seed": 42,
+        "batch_size": 8,
+        "epochs": 2,
+        "lr": 0.0002,
+        "weight_decay": 0.05,
+        "doc_loss_weight": 1.0,
+        "evidence_loss_weight": 0.3,
+        "relation_loss_weight": 0.2,
+        "grad_clip": 5.0,
+        "evidence_threshold": 0.5,
+        "device": "cpu",
+        "num_threads": 1
+      },
+      "result": {
+        "folds": [
+          {
+            "Accuracy": 33.33333333333333,
+            "Macro-F1": 20.77922077922078,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 66.66666666666666,
+            "Evidence-F1": 13.684210526315788,
+            "epoch": 2.0,
+            "train_loss": 2.1928491592407227,
+            "fold": 1.0
+          },
+          {
+            "Accuracy": 25.0,
+            "Macro-F1": 10.0,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 62.96296296296296,
+            "Evidence-F1": 5.494505494505495,
+            "epoch": 2.0,
+            "train_loss": 2.1135927041371665,
+            "fold": 2.0
+          },
+          {
+            "Accuracy": 33.33333333333333,
+            "Macro-F1": 25.0,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 25.925925925925924,
+            "Evidence-F1": 0.0,
+            "epoch": 2.0,
+            "train_loss": 2.025158087412516,
+            "fold": 3.0
+          }
+        ],
+        "summary": {
+          "Accuracy_mean": 30.55555534362793,
+          "Accuracy_std": 3.928370237350464,
+          "Macro-F1_mean": 18.59307289123535,
+          "Macro-F1_std": 6.315823078155518,
+          "Risk-F1_mean": 85.71428680419922,
+          "Risk-F1_std": 0.0,
+          "AUC_mean": 51.85184860229492,
+          "AUC_std": 18.39464569091797,
+          "Evidence-F1_mean": 6.3929057121276855,
+          "Evidence-F1_std": 5.62255859375,
+          "epoch_mean": 2.0,
+          "epoch_std": 0.0,
+          "train_loss_mean": 2.1105334758758545,
+          "train_loss_std": 0.06849373131990433,
+          "fold_mean": 2.0,
+          "fold_std": 0.8164966106414795
+        }
+      }
+    },
+    {
+      "name": "cycle_2_evidence_balanced",
+      "selection_score": 14.667542934417725,
+      "model_config": {
+        "num_classes": 4,
+        "text_dim": 128,
+        "visual_dim": 16,
+        "layout_dim": 10,
+        "hidden_dim": 64,
+        "role_dim": 32,
+        "num_relation_types": 3,
+        "num_gnn_layers": 2,
+        "dropout": 0.15,
+        "max_nodes": 48,
+        "top_k": 6,
+        "edge_threshold": 0.55,
+        "relation_risk_alpha": 1.0,
+        "risk_relation_positive_weight": 3.0,
+        "role_vocab": [
+          "amount",
+          "total",
+          "tax",
+          "item",
+          "payer",
+          "payee",
+          "date",
+          "seal",
+          "qr",
+          "bill_no",
+          "account",
+          "other"
+        ],
+        "relation_vocab": [
+          "spatial",
+          "semantic",
+          "business"
+        ]
+      },
+      "train_config": {
+        "seed": 42,
+        "batch_size": 8,
+        "epochs": 2,
+        "lr": 0.0002,
+        "weight_decay": 0.05,
+        "doc_loss_weight": 1.0,
+        "evidence_loss_weight": 0.5,
+        "relation_loss_weight": 0.3,
+        "grad_clip": 5.0,
+        "evidence_threshold": 0.5,
+        "device": "cpu",
+        "num_threads": 1
+      },
+      "result": {
+        "folds": [
+          {
+            "Accuracy": 25.0,
+            "Macro-F1": 10.0,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 44.44444444444444,
+            "Evidence-F1": 22.413793103448278,
+            "epoch": 1.0,
+            "train_loss": 2.5288196404774985,
+            "fold": 1.0
+          },
+          {
+            "Accuracy": 25.0,
+            "Macro-F1": 10.0,
+            "Risk-F1": 0.0,
+            "AUC": 48.148148148148145,
+            "Evidence-F1": 17.91044776119403,
+            "epoch": 1.0,
+            "train_loss": 2.6480706532796225,
+            "fold": 2.0
+          },
+          {
+            "Accuracy": 25.0,
+            "Macro-F1": 10.0,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 62.96296296296296,
+            "Evidence-F1": 15.68627450980392,
+            "epoch": 2.0,
+            "train_loss": 2.2445548375447593,
+            "fold": 3.0
+          }
+        ],
+        "summary": {
+          "Accuracy_mean": 25.0,
+          "Accuracy_std": 0.0,
+          "Macro-F1_mean": 10.0,
+          "Macro-F1_std": 0.0,
+          "Risk-F1_mean": 57.14285659790039,
+          "Risk-F1_std": 40.406105041503906,
+          "AUC_mean": 51.85185241699219,
+          "AUC_std": 8.000914573669434,
+          "Evidence-F1_mean": 18.6701717376709,
+          "Evidence-F1_std": 2.7985429763793945,
+          "epoch_mean": 1.3333333730697632,
+          "epoch_std": 0.471404492855072,
+          "train_loss_mean": 2.4738149642944336,
+          "train_loss_std": 0.16926385462284088,
+          "fold_mean": 2.0,
+          "fold_std": 0.8164966106414795
+        }
+      }
+    },
+    {
+      "name": "cycle_3_relation_refined",
+      "selection_score": 21.568267822265625,
+      "model_config": {
+        "num_classes": 4,
+        "text_dim": 128,
+        "visual_dim": 16,
+        "layout_dim": 10,
+        "hidden_dim": 64,
+        "role_dim": 32,
+        "num_relation_types": 3,
+        "num_gnn_layers": 2,
+        "dropout": 0.2,
+        "max_nodes": 48,
+        "top_k": 6,
+        "edge_threshold": 0.5,
+        "relation_risk_alpha": 1.25,
+        "risk_relation_positive_weight": 3.0,
+        "role_vocab": [
+          "amount",
+          "total",
+          "tax",
+          "item",
+          "payer",
+          "payee",
+          "date",
+          "seal",
+          "qr",
+          "bill_no",
+          "account",
+          "other"
+        ],
+        "relation_vocab": [
+          "spatial",
+          "semantic",
+          "business"
+        ]
+      },
+      "train_config": {
+        "seed": 42,
+        "batch_size": 8,
+        "epochs": 2,
+        "lr": 0.0002,
+        "weight_decay": 0.05,
+        "doc_loss_weight": 1.0,
+        "evidence_loss_weight": 0.6,
+        "relation_loss_weight": 0.35,
+        "grad_clip": 5.0,
+        "evidence_threshold": 0.5,
+        "device": "cpu",
+        "num_threads": 1
+      },
+      "result": {
+        "folds": [
+          {
+            "Accuracy": 33.33333333333333,
+            "Macro-F1": 23.214285714285715,
+            "Risk-F1": 20.0,
+            "AUC": 59.25925925925925,
+            "Evidence-F1": 20.33898305084746,
+            "epoch": 2.0,
+            "train_loss": 2.471891164779663,
+            "fold": 1.0
+          },
+          {
+            "Accuracy": 33.33333333333333,
+            "Macro-F1": 23.214285714285715,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 33.33333333333333,
+            "Evidence-F1": 0.0,
+            "epoch": 2.0,
+            "train_loss": 2.4160965283711753,
+            "fold": 2.0
+          },
+          {
+            "Accuracy": 25.0,
+            "Macro-F1": 10.0,
+            "Risk-F1": 85.71428571428571,
+            "AUC": 70.37037037037037,
+            "Evidence-F1": 12.765957446808512,
+            "epoch": 2.0,
+            "train_loss": 2.4308365980784097,
+            "fold": 3.0
+          }
+        ],
+        "summary": {
+          "Accuracy_mean": 30.55555534362793,
+          "Accuracy_std": 3.928370237350464,
+          "Macro-F1_mean": 18.80952262878418,
+          "Macro-F1_std": 6.229273319244385,
+          "Risk-F1_mean": 63.80952453613281,
+          "Risk-F1_std": 30.978012084960938,
+          "AUC_mean": 54.32098388671875,
+          "AUC_std": 15.518278121948242,
+          "Evidence-F1_mean": 11.034980773925781,
+          "Evidence-F1_std": 8.393083572387695,
+          "epoch_mean": 2.0,
+          "epoch_std": 0.0,
+          "train_loss_mean": 2.439608097076416,
+          "train_loss_std": 0.02360742725431919,
+          "fold_mean": 2.0,
+          "fold_std": 0.8164966106414795
+        }
+      }
+    }
+  ]
+}
